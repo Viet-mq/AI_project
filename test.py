@@ -30,7 +30,7 @@ def get_model():
     x = Dense(4, activation='softmax', name='predictions')(x)
 
     # Compile
-    my_model = Model(input=input, output=x)
+    my_model = Model(inputs=input, outputs=x)
     my_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
     return my_model
@@ -38,7 +38,8 @@ def get_model():
 
 # Load weights model da train
 my_model = get_model()
-my_model.load_weights("weights-19-1.00.hdf5")
+#my_model.load_weights("weights-19-1.00.hdf5")
+my_model.load_weights("vggmodel.h5")
 
 while (True):
     # Capture frame-by-frame
